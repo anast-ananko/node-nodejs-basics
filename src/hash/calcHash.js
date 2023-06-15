@@ -11,7 +11,7 @@ const calculateHash = async () => {
   const hash = createHash('sha256');
 
   try {
-    const content = await readFile(filePath, { flag: 'r' });
+    const content = await readFile(filePath);
     hash.update(content);
 
     const hashContent = hash.digest('hex');
